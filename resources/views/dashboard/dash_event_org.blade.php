@@ -1,7 +1,7 @@
 @extends('dashboard/dash_account')
 
 @section('content')
-!-- Site wrapper -->
+<!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">

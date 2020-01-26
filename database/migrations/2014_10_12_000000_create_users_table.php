@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('email')->unique();
-            $table->enum('user_type', ['Event Organizer, Expert']);
+            $table->enum('user_type', ['Event Organizer', 'Expert']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -19,3 +19,9 @@ mix.styles([
     'public/adminlte/plugins/fontawesome-free/css/all.min.css',
     'public/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css'
 ], 'public/css/all.css');
+
+mix.scripts([
+    'public/adminlte/plugins/jquery/jquery.min.js',
+    'public/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js',
+    'public/adminlte/dist/js/adminlte.min.js',
+], 'public/js/all.js');

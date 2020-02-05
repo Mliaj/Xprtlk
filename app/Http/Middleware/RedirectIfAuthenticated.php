@@ -18,7 +18,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            if (Auth::user()->user_type == 'Expert')
+                return redirect()->route('expertHome');
+            
+            if (Auth::user()->user_type == 'Event Organizer')
+                return redirect()->route('eventOrgHome');
         }
 
         return $next($request);

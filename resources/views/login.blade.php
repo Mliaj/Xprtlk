@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="login-box">
+
+  @include('inc.alert')
+
   <div class="login-logo">
     <a href="../../index2.html"><b>LOGIN</b></a>
   </div>
@@ -10,9 +13,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="../../index3.html" method="post">
+      {!! Form::open(['route' => 'login']) !!}
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -20,7 +23,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -41,13 +44,14 @@
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <hr/>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-          </div>
           <!-- /.col -->
-        </div>
-      </form>
+      {!! Form::close() !!}
 
+      <div class="col-12">
+        <a href="{{ route('register') }}" type="submit" class="btn btn-primary btn-block">Register</a>
+      </div>
+
+    </div>
 
       {{-- <p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>

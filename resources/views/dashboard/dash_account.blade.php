@@ -38,6 +38,11 @@
           </div>
         </div><!-- /.container-fluid -->
       </section>
+      <form action="{{ route('logout') }}" method="post">
+        @csrf
+        <button >Log Out</button>
+      </form>
+     
 
       <!-- Main content -->
       <section class="content">

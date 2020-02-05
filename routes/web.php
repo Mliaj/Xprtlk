@@ -31,5 +31,5 @@ Route::get('/home/expert', function() {
 
 Route::get('/', function() {
     return view('landing_page.index');
-});
+})->name('landing');
 

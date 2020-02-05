@@ -26,9 +26,11 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
+  <nav class="mb-n4 mt-n3 navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">XPRTLK</a>
+    <a class="navbar-brand" href="{{ route('landing') }}">
+      <img src="{{ asset('bootstrap-landing/img/brand.png') }}" alt="" style="width:100px;heigth:30px;">
+    </a>
       <div class="form-inline">
       <a class="btn btn-success mr-sm-2" href="{{ route('login') }}">Login</a>
       <a class="btn btn-primary" href="{{ route('register') }}">Sign Up</a>

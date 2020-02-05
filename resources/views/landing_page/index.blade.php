@@ -29,7 +29,10 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">XPRTLK</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
+      <div class="form-inline">
+      <a class="btn btn-success mr-sm-2" href="{{ route('login') }}">Login</a>
+      <a class="btn btn-primary" href="{{ route('register') }}">Sign Up</a>
+      </div>
     </div>
   </nav>
 

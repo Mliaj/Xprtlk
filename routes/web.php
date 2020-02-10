@@ -19,7 +19,8 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@index')->name('register');
 Route::post('register', 'Auth\RegisterController@create')->name('register');
 
-Route::get('profile', 'UserController@show')->name('profile');
+Route::get("home/expert/profile", 'UserController@show')->name('expert_profile');
+// Route::get("home/expert/profile", 'UserController@show')->name('profile');
 
 Route::get('/expert/event_list', 'AppEventController@showEventList')->name('event_list');
 // Route::group(['middleware' => 'auth'], function() {

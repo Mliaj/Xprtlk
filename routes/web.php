@@ -21,17 +21,18 @@ Route::post('register', 'Auth\RegisterController@create')->name('register');
 
 Route::get('profile', 'UserController@show')->name('profile');
 
+Route::get('/expert/event_list', 'AppEventController@showEventList')->name('event_list');
 // Route::group(['middleware' => 'auth'], function() {
 
 // });
 
-Route::get('/home/event_org', function() {
+Route::get('event_org/home', function() {
     return view('dashboard.dash_event_org');
-})->name('eventOrgHome');
+})->name('event_org_home');
 
-Route::get('/home/expert', function() {
+Route::get('expert/home', function() {
     return view('dashboard.dash_expert');
-})->name('expertHome');
+})->name('expert_home');
 
 Route::get('/', function() {
     return view('landing_page.index');

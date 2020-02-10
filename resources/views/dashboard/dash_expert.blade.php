@@ -5,7 +5,7 @@
 @endsection
 
 @section('breadcrumb')
-  
+  <li class="breadcrumb-item active">Home</li>
 @endsection
 
 @section('content')

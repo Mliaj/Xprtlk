@@ -35,14 +35,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="@if (Auth::user()->user_type === 'Expert')
+                        {{ route('event_list') }}
+                     @else
+                        {{ 'event_org' }} 
+                     @endif" class="nav-link">
               <i class="nav-icon far fa-list-alt"></i>
               <p>
-                {{-- @if (Auth::user()->user_type === 'Expert') --}}
+                @if (Auth::user()->user_type === 'Expert')
                   Event List
-                {{-- @else
+                @else
                   Program Activities                  
-                @endif --}}
+                @endif
               </p>
             </a>
           </li>

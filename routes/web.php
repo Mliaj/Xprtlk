@@ -19,7 +19,11 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@index')->name('register');
 Route::post('register', 'Auth\RegisterController@create')->name('register');
 
-Route::resource('user', 'UserController');
+Route::get('profile', 'UserController@show')->name('profile');
+
+// Route::group(['middleware' => 'auth'], function() {
+
+// });
 
 Route::get('/home/event_org', function() {
     return view('dashboard.dash_event_org');

@@ -24,4 +24,5 @@ mix.scripts([
     'public/adminlte/plugins/jquery/jquery.min.js',
     'public/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js',
     'public/adminlte/dist/js/adminlte.min.js',
+    'resources/js/appAlert.js',
 ], 'public/js/all.js');

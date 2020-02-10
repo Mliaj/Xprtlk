@@ -4,6 +4,10 @@
     Home
 @endsection
 
+@section('name')
+  <li class="breadcrumb-item active">Home</li>
+@endsection
+
 @section('content')
 
       <!-- Default box -->

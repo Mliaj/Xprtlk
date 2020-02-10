@@ -23,6 +23,7 @@ Route::get("home/expert/profile", 'UserController@show')->name('expert_profile')
 // Route::get("home/expert/profile", 'UserController@show')->name('profile');
 
 Route::get('/expert/event_list', 'AppEventController@showEventList')->name('event_list');
+Route::get('/expert/event_history', 'AppEventController@showEventHistory')->name('event_history');
 // Route::group(['middleware' => 'auth'], function() {
 
 // });

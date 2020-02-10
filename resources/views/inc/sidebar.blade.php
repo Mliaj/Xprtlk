@@ -27,7 +27,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="@if(Auth::user()->user_type == "Expert")
+            <a href="@if(Auth::user()->user_type === "Expert")
                 {{ route("expert_profile") }}
             @endif" class="nav-link">
               <i class="nav-icon far fa-address-card"></i>
@@ -53,7 +53,9 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="@if (Auth::user()->user_type === 'Expert')
+                {{ route('event_history') }}
+            @endif" class="nav-link">
               <i class="nav-icon fas fa-history"></i>
               <p>
                 Event History

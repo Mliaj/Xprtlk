@@ -10,4 +10,9 @@ class AppEventController extends Controller
     {
         return view('app_events.event_list');
     }
+
+    public function showEventHistory()
+    {
+        return view('app_events.event_history');
+    }
 }

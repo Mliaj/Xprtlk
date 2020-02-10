@@ -10,4 +10,12 @@ class AppEventController extends Controller
     {
         return view('app_events.event_list');
     }
+
+    /**
+     * @param int $id
+     */
+    public function showEventPost($id)
+    {
+        return view('app_events.event_post');
+    }
 }

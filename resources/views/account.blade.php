@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
 </head>
 <body class="hold-transition login-page">
-
+    
     @yield('content')
-
+   
 <script src="js/all.js"></script>
 
 </body>

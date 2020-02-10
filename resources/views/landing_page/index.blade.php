@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
 
   <title>XPRTLK</title>
 
@@ -26,25 +27,42 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="mb-n4 mt-n3 navbar navbar-light bg-light static-top">
+  <nav class="mb-n4 mt-n3 navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-    <a class="navbar-brand" href="{{ route('landing') }}">
-      <img src="{{ asset('bootstrap-landing/img/brand.png') }}" alt="" style="width:100px;heigth:30px;">
-    </a>
-      <div class="form-inline">
-      <a class="btn btn-success mr-sm-2" href="{{ route('login') }}">Login</a>
-      <a class="btn btn-primary" href="{{ route('register') }}">Sign Up</a>
+      <a class="navbar-brand" href="{{ route('landing') }}">
+        <img src="{{ asset('bootstrap-landing/img/brand.png') }}" alt="" style="width:100px;heigth:30px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Speakers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Organizers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Events</a>
+          </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <a class="btn btn-success mr-sm-2" href="{{ route('login') }}">Login</a>
+          <a class="btn btn-primary" href="{{ route('register') }}">Sign Up</a>
+        </div>
       </div>
     </div>
   </nav>
-
+    
   <!-- Masthead -->
   <header class="masthead text-white text-center">
-    <div class="overlay"></div>
+    <div class=" overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Find the perfect speaker!</h1>
+          <h1 class="mb-5">Organize Events | Find expert speakers!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
@@ -53,7 +71,7 @@
                 <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Start Now</button>
               </div>
             </div>
           </form>
@@ -69,10 +87,10 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+              <i class="fas fa-users m-auto text-primary"></i>
             </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+            <h3>Find Good Speaker</h3>
+            <p class="lead mb-0">Lets you find the perfect speaker you want!</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -80,8 +98,8 @@
             <div class="features-icons-icon d-flex">
               <i class="icon-layers m-auto text-primary"></i>
             </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+            <h3>Free of Access</h3>
+            <p class="lead mb-0">!</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -90,7 +108,7 @@
               <i class="icon-check m-auto text-primary"></i>
             </div>
             <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+            <p class="lead mb-0">!</p>
           </div>
         </div>
       </div>
@@ -128,7 +146,7 @@
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">
-      <h2 class="mb-5">What people are saying...</h2>
+      <h2 class="mb-5">Featured Speakers</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
@@ -153,10 +171,13 @@
         </div>
       </div>
     </div>
+    <div class="container  mt-5">
+      <button type="button" class="btn btn-outline-info">Show more</button>
+    </div>
   </section>
 
   <!-- Call to Action -->
-  <section class="call-to-action text-white text-center">
+  {{-- <section class="call-to-action text-white text-center">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -177,7 +198,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- Footer -->
   <footer class="footer bg-light">
@@ -227,7 +248,7 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-<script src="{{ asset('boostrap-landing/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('bootstrap-landing/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('bootstrap-landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 </body>

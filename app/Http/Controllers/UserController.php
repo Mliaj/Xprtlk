@@ -52,7 +52,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        if (Auth::user()->user_type == 'Expert') {
+            return view('profile.exp_profile_edit');
+        }
     }
 
     /**

@@ -1,5 +1,14 @@
 @extends('dashboard/dash_account')
 
+@section('content-title')
+    Event History
+@endsection
+
+@section('breadcrumb')
+    @include('inc.home_links')
+    <li class="breadcrumb-item active">Event History</li>
+@endsection
+
 @section('content')
  <!-- Main content -->
  <section class="content">
@@ -38,7 +47,7 @@
                     </div>
                     <!-- END timeline item -->
 
-                    <div class="time-label">
+                    {{-- <div class="time-label">
                         <span class="bg-green">20 March 2015</span>
                     </div>
                     <!-- timeline item -->
@@ -105,7 +114,7 @@
                             <a href="#" class="btn btn-sm bg-maroon">See comments</a>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                     <!-- END timeline item -->
                     <div>
                         <i class="fas fa-clock bg-gray"></i>

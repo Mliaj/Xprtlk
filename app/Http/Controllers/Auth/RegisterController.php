@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\RegisterRequest;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -39,15 +40,17 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('register');
+        $email = $request->input('email');
+
+        return view('register', compact('email'));
     }
 
     public function create(RegisterRequest $request)
-    {   
+    {
         User::create($request->input());
-        
+
         return redirect()
                 ->route('login')
                 ->withSuccess('Successfully account created');

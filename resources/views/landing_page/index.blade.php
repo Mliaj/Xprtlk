@@ -22,6 +22,9 @@
   <!-- Custom styles for this template -->
   <link href="{{ asset('bootstrap-landing/css/landing-page.min.css') }}" rel="stylesheet">
 
+  <!-- Custom css -->
+  <link href="{{ asset('css/nav.css') }}"  rel="stylesheet">
+
 </head>
 
 <body>
@@ -35,7 +38,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -55,7 +58,7 @@
       </div>
     </div>
   </nav>
-    
+
   <!-- Masthead -->
   <header class="masthead text-white text-center">
     <div class=" overlay"></div>
@@ -65,13 +68,13 @@
           <h1 class="mb-5">Organize Events | Find expert speakers!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form method="get" action="{{ route('register') }}">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email..." required>
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Start Now</button>
+                <button class="btn btn-lg btn-primary">Start Now</button>
               </div>
             </div>
           </form>
@@ -89,28 +92,28 @@
             <div class="features-icons-icon d-flex">
               <i class="fas fa-users m-auto text-primary"></i>
             </div>
-            <h3>Find Good Speaker</h3>
+            <h3>Find Good Experts</h3>
             <p class="lead mb-0">Lets you find the perfect speaker you want!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Free of Access</h3>
-            <p class="lead mb-0">!</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
+              <i class="far fa-clock m-auto text-primary"></i>
             </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">!</p>
+            <h3>Saves Time</h3>
+            <p class="lead mb-0">Lets you have an efficient way of making events as an organizer and applying events as an expert.</p>
           </div>
         </div>
+        <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="far fa-handshake m-auto text-primary"></i>
+              </div>
+              <h3>Connect with each other</h3>
+              <p class="lead mb-0">Lets you communicate with each other fast and easy.</p>
+            </div>
+          </div>
       </div>
     </div>
   </section>
@@ -118,32 +121,90 @@
   <!-- Image Showcases -->
   <section class="showcase">
     <div class="container-fluid p-0">
-      <div class="row no-gutters">
+        <div class="card-body">
+            <div class="container">
+                <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="custom-content-below-home-tab" data-toggle="pill" href="#custom-content-below-home" role="tab" aria-controls="custom-content-below-home" aria-selected="true">Expert Speaker</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill" href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile" aria-selected="false">Event Organizer</a>
+                    </li>
+                  </ul>
+            </div>
 
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+            {{-- First Tab Content --}}
+            <div class="tab-content" id="custom-content-below-tabContent">
+              <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                <div class="row no-gutters">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Create your profile for free</h2>
+                        <p class="lead mb-0">
+                            Create your profile and event organizers will find you based on the information
+                            you provide on your profile.
+                        </p>
+                    </div>
+                 </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>No Commission</h2>
+                        <p class="lead mb-0">
+                            No commission fee charged when an event organizer contacts you.
+                            Negotiate directly with event managers and keep everything -
+                            Connect freely with no charge and you're good to go!
+                        </p>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Apply to any events</h2>
+                        <p class="lead mb-0">
+                            You can browse any list of events and send a proposal of yourself.
+                        </p>
+                    </div>
+                </div>
+              </div>
+
+              {{-- Second Tab Content --}}
+              <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
+                <div class="row no-gutters">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Find an expert</h2>
+                        <p class="lead mb-0">
+                            Looking for an expert with great presentation skills
+                            and industry expertise.
+                        </p>
+                    </div>
+                 </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Contact experts directly for free</h2>
+                        <p class="lead mb-0">
+                            Handle communication directly, with speakers you want to invite.
+                        </p>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Create and post an event</h2>
+                        <p class="lead mb-0">
+                            You can browse any list of events and send a proposal of yourself.
+                        </p>
+                    </div>
+                </div>
+              </div>
+            </div>
         </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
-        <div class="col-lg-6 my-auto showcase-text">
-          <h2>Updated For Bootstrap 4</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
+  {{-- <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">
       <h2 class="mb-5">Featured Speakers</h2>
@@ -174,7 +235,7 @@
     <div class="container  mt-5">
       <button type="button" class="btn btn-outline-info">Show more</button>
     </div>
-  </section>
+  </section> --}}
 
   <!-- Call to Action -->
   {{-- <section class="call-to-action text-white text-center">

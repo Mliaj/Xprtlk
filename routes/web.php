@@ -16,11 +16,12 @@ Route::get('login', 'Auth\LoginController@index')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('register', 'Auth\RegisterController@index')->name('register');
+Route::get('register/{email?}', 'Auth\RegisterController@index')->name('register');
 Route::post('register', 'Auth\RegisterController@create')->name('register');
 
-Route::get("home/expert/profile", 'UserController@show')->name('expert_profile');
-// Route::get("home/expert/profile", 'UserController@show')->name('profile');
+Route::get("expert/profile", 'UserController@show')->name('expert_profile');
+
+Route::get("expert/profile/edit", 'UserController@edit')->name('exp_profile_edit');
 
 Route::get('/expert/event_list', 'AppEventController@showEventList')->name('event_list');
 Route::get('/expert/event_history', 'AppEventController@showEventHistory')->name('event_history');

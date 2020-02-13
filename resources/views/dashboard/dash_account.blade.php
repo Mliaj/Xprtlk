@@ -37,13 +37,7 @@
           </div>
         </div><!-- /.container-fluid -->
       </section>
-      
-      {{-- Sample logout --}}
-      {!! Form::open(['route' => 'logout']) !!}
-      <button class="btn btn-danger">Logout</button>
-      {!! Form::close() !!}
 
-      
       <!-- Main content -->
       <section class="content">
         @yield('content')

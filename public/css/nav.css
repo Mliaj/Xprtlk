@@ -1,0 +1,6 @@
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    text-align:center;
+    transform: translatex(-50%);
+}

@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="register-box">
-  
+
     @include('inc.alert')
 
     <div class="register-logo">
       <a href="../../index2.html"><b>REGISTER</b></a>
     </div>
-  
+
     <div class="card">
       <div class="card-body register-card-body">
         <p class="login-box-msg">Register a new membership</p>
@@ -24,7 +24,7 @@
             </div>
         </div>
           <div class="input-group mb-3">
-            <input type="email" name="email" class="form-control" placeholder="Email" required>
+            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $email ?? ''}}" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>

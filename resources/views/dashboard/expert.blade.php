@@ -1,10 +1,10 @@
-@extends('dashboard/dash_account')
+@extends('dashboard.account')
 
 @section('content-title')
     Home
 @endsection
 
-@section('name')
+@section('breadcrumb')
   <li class="breadcrumb-item active">Home</li>
 @endsection
 
@@ -26,12 +26,7 @@
           Start creating your amazing application!
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
       </div>
       <!-- /.card -->
-
-
+      
 @endsection

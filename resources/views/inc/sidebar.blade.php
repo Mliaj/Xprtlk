@@ -1,7 +1,11 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="@if (Auth::user()->isExpert())
+                {{ route('expert_home') }}
+             @else
+                {{ route('event_org_home') }}
+             @endif" class="brand-link">
       <img src=""
            alt=""
            class="brand-image img-circle elevation-3"

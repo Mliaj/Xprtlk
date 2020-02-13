@@ -41,7 +41,7 @@ class UserController extends Controller
             return view('profile.exp_profile');
         }
 
-        return view('profile.index');
+        return view('profile.event_org_profile');
     }
 
     /**

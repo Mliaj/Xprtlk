@@ -1,4 +1,4 @@
-@extends('dashboard.dash_account')
+@extends('dashboard.account')
 
 @section('content-title')
     View Event

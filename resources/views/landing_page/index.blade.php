@@ -22,9 +22,6 @@
   <!-- Custom styles for this template -->
   <link href="{{ asset('bootstrap-landing/css/landing-page.min.css') }}" rel="stylesheet">
 
-  <!-- Custom css -->
-  <link href="{{ asset('css/nav.css') }}"  rel="stylesheet">
-
 </head>
 
 <body>

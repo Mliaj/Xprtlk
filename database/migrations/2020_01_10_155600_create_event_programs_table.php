@@ -41,7 +41,7 @@ class CreateEventProgramsTable extends Migration
                   ->references('id')
                   ->on('event_organizer_profiles')
                   ->onUpdate('CASCADE')
-                  ->onDelete('SET NULL');
+                  ->onDelete('cascade');
         });
     }
 

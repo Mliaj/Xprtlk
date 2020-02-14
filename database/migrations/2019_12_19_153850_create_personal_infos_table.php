@@ -25,6 +25,7 @@ class CreatePersonalInfosTable extends Migration
             $table->string('address', 150);
             $table->string('position', 50);
             $table->string('company', 50);
+            $table->enum('gender',['male','female','other']);
             //not sure if i really want to save this to db
             // $table->string('profile_pic')->nullable();
             $table->timestamps();

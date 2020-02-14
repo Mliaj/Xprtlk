@@ -15,6 +15,10 @@ class AppEventController extends Controller
         return view('app_events.list');
     }
 
+    public function showEventHistory()
+    {
+        return view('app_events.history');
+    }
     /**
      * @param int $id
      */
@@ -32,14 +36,14 @@ class AppEventController extends Controller
     }
 
     public function storeEventPost(StoreEventRequest $request)
-    {   dd($request->input('endDay') . '-' . 
+    {   dd($request->input('endDay') . '-' .
         $request->input('endMonth') . '-' .
         $request->input('endYear'));
         $input = [
             'title'         => $request->input('eventTitle'),
             'logo_location' => $request->file('eventTitle')
                                 ->storeAs('public', Auth::id() . \App\Models\EventProgram::getUserLastEvent()),
-            'start_date'    => $request->input('startDay') . '-' . 
+            'start_date'    => $request->input('startDay') . '-' .
                                $request->input('startMonth') . '-' .
                                $request->input('startYear'),
             'end_date'      => $request->input('endDay') . '-' .
@@ -55,11 +59,6 @@ class AppEventController extends Controller
 
     private function validateDate(string $date)
     {
-        
-    }
 
-    public function showEventHistory()
-    {
-        return view('app_events.event_history');
     }
 }

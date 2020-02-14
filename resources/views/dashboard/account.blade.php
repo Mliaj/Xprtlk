@@ -10,6 +10,9 @@
 
   <link rel="stylesheet" href="{{ asset('css/all.css') }}">
   <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+
+  {{-- Custom css for ratings --}}
+  <link rel="stylesheet" href="{{ asset('css/ratings.css') }}">
 </head>
 <body class="hold-transition sidebar-mini">
   <!-- Site wrapper -->

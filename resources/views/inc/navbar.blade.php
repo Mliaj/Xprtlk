@@ -46,7 +46,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                     {!! Form::open(['route' => 'logout', "class"=>"form-inline"]) !!}
-                    <a href="{{ route('exp_profile_edit') }}" class="btn btn-default btn-flat ml-1 mr-3">Edit Profile</a>
+                    <a href="{{ route('expert_profile_edit') }}" class="btn btn-default btn-flat ml-1 mr-3">Edit Profile</a>
                     <button class="btn btn-default btn-flat ml-5" type="submit">Sign out</button>
                     {!! Form::close() !!}
                 </li>

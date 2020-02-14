@@ -48,14 +48,14 @@
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Achievements</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Presentation</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#aboutme" data-toggle="tab">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#achievements" data-toggle="tab">Achievements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#presentations" data-toggle="tab">Presentations</a></li>
                         </ul>
                     </div><!-- /.card-header -->
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="active tab-pane" id="activity">
+                            <div class="active tab-pane" id="aboutme">
                                 <!-- Post -->
                                 <div class="post">
                                     <div class="card card-primary">
@@ -85,7 +85,7 @@
                                 <!-- /.post -->
                             </div>
                             <!-- /.tab-pane -->
-                            <div class="tab-pane" id="timeline">
+                            <div class="tab-pane" id="achievements">
                                 <!-- The timeline -->
                                 <div class="timeline timeline-inverse">
                                     <div class="post">
@@ -108,53 +108,83 @@
                             </div>
                             <!-- /.tab-pane -->
 
-                            <div class="tab-pane" id="settings">
-                                <form class="form-horizontal">
-                                <div class="form-group row">
-                                    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                    <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                            <div class="tab-pane" id="presentations">
+                                <section class="content">
+
+                                    <!-- Default box -->
+                                    <div class="card">
+                                      <div class="card-body p-0">
+                                        <table class="table table-striped projects">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 30%">
+                                                        Event Name
+                                                    </th>
+                                                    <th style="width: 30%">
+                                                        Presentation Type
+                                                    </th>
+
+                                                    <th style="width: 40%" >
+                                                        Role
+                                                    </th>
+
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="text-info">
+                                                           IoT Conference
+                                                        </a>
+                                                        <br/>
+                                                        <small>
+                                                            {{ \Carbon\Carbon::now()->format('M. d, Y')}}
+                                                        </small>
+                                                    </td>
+                                                    <td>
+                                                        <a class="">
+                                                            Conference
+                                                         </a>
+                                                    </td>
+
+                                                    <td>
+                                                        <a class=""> Conference Speaker</a>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <a class="text-info">
+                                                            Cryptocurrency
+                                                        </a>
+                                                        <br/>
+                                                        <small>
+                                                            {{ \Carbon\Carbon::now()->format('M. d, Y')}}
+                                                        </small>
+                                                    </td>
+                                                    <td>
+                                                        <a class="">
+                                                            Moderator
+                                                         </a>
+
+                                                    </td>
+
+                                                    <td>
+                                                        <a class="">Moderator</a>
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                      </div>
+                                      <!-- /.card-body -->
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                    <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
-                                    <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName2" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
-                                    <div class="col-sm-10">
-                                    <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
-                                    <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label>
-                                        <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                        </label>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="offset-sm-2 col-sm-10">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                                </form>
+                                    <!-- /.card -->
+
+                                  </section>
+                                  <!-- /.content -->
                             </div>
                         <!-- /.tab-pane -->
                         </div>

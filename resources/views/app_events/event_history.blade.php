@@ -21,101 +21,105 @@
                 <div class="timeline">
                     <!-- timeline time label -->
                     <div class="time-label">
-                        <span class="bg-green">10 Feb. 2014</span>
+                        <span class="bg-green">{{ \Carbon\Carbon::now()->format('M. d, Y')}}</span>
                     </div>
                     <!-- /.timeline-label -->
                     <!-- timeline item -->
                     <div>
                         <i class="fas bg-blue"></i>
                         <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> 12:05</span>
-                            <h3 class="timeline-header"><a href="#">IoT Conference</a> <span>|</span> Cebu City</h3>
+
+                            <h3 class="timeline-header"><a href="#">IOT CONFERENCE: THE INTERSECTION OF INDUSTRIES AND IOT TECHNOLOGIES</a> <span>|</span> Cebu City</h3>
 
                             <div class="timeline-body">
-                                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                quora plaxo ideeli hulu weebly balihoo...
-                            </div>
-                            <div class="">
-
+                                The global conference and exhibition where strategists,
+                                technologists and implementers connect, putting IoT, AI, 5G,
+                                Edge and Security into action across industry verticals.
                             </div>
                             <div class="timeline-footer">
+                                Event Duration:<span class="time"> 2-3 Hrs. <i class="fas fa-clock"> </i></span>
+                            </div>
+                        </div>
+                    </div>
 
-                            </div>
+                    <div class="timeline">
+                        <!-- timeline time label -->
+                        <div class="time-label">
+                            <span class="bg-green">{{ \Carbon\Carbon::now()->format('M. d, Y')}}</span>
                         </div>
-                    </div>
-                    <!-- END timeline item -->
+                        <!-- /.timeline-label -->
+                        <!-- timeline item -->
+                        <div>
+                            <i class="fas bg-blue"></i>
+                            <div class="timeline-item">
 
-                    {{-- <div class="time-label">
-                        <span class="bg-green">20 March 2015</span>
-                    </div>
-                    <!-- timeline item -->
-                    <div>
-                        <i class="fas bg-blue"></i>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> 5 mins ago</span>
-                            <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request</h3>
-                        </div>
-                    </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                    <div>
-                        <i class="fas fa-comments bg-yellow"></i>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> 27 mins ago</span>
-                            <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-                            <div class="timeline-body">
-                                Take me to your leader!
-                                Switzerland is small and neutral!
-                                We are more like Germany, ambitious and misunderstood!
-                            </div>
-                            <div class="timeline-footer">
-                                <a class="btn btn-warning btn-sm">View comment</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END timeline item -->
-                    <!-- timeline time label -->
-                    <div class="time-label">
-                        <span class="bg-green">3 Jan. 2014</span>
-                    </div>
-                    <!-- /.timeline-label -->
-                    <!-- timeline item -->
-                    <div>
-                        <i class="fa fa-camera bg-purple"></i>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> 2 days ago</span>
-                            <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-                            <div class="timeline-body">
-                                <img src="http://placehold.it/150x100" alt="...">
-                                <img src="http://placehold.it/150x100" alt="...">
-                                <img src="http://placehold.it/150x100" alt="...">
-                                <img src="http://placehold.it/150x100" alt="...">
-                                <img src="http://placehold.it/150x100" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END timeline item -->
-                    <!-- timeline item -->
-                    <div>
-                        <i class="fas fa-video bg-maroon"></i>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fas fa-clock"></i> 5 days ago</span>
+                                <h3 class="timeline-header"><a href="#">IOT CONFERENCE: THE INTERSECTION OF INDUSTRIES AND IOT TECHNOLOGIES</a> <span>|</span> Cebu City</h3>
 
-                            <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
-
-                            <div class="timeline-body">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs" frameborder="0" allowfullscreen=""></iframe>
-                            </div>
-                            </div>
-                            <div class="timeline-footer">
-                            <a href="#" class="btn btn-sm bg-maroon">See comments</a>
+                                <div class="timeline-body">
+                                    The global conference and exhibition where strategists,
+                                    technologists and implementers connect, putting IoT, AI, 5G,
+                                    Edge and Security into action across industry verticals.
+                                </div>
+                                <div class="timeline-footer">
+                                    Event Duration:<span class="time"> 2-3 Hrs. <i class="fas fa-clock"> </i></span>
+                                </div>
                             </div>
                         </div>
-                    </div>--}}
-                    <!-- END timeline item -->
+                    </div>
+                    <!--/.timeline -->
+
+                    <div class="timeline">
+                        <!-- timeline time label -->
+                        <div class="time-label">
+                            <span class="bg-green">{{ \Carbon\Carbon::now()->format('M. d, Y')}}</span>
+                        </div>
+                        <!-- /.timeline-label -->
+                        <!-- timeline item -->
+                        <div>
+                            <i class="fas bg-blue"></i>
+                            <div class="timeline-item">
+
+                                <h3 class="timeline-header"><a href="#">IOT CONFERENCE: THE INTERSECTION OF INDUSTRIES AND IOT TECHNOLOGIES</a> <span>|</span> Cebu City</h3>
+
+                                <div class="timeline-body">
+                                    The global conference and exhibition where strategists,
+                                    technologists and implementers connect, putting IoT, AI, 5G,
+                                    Edge and Security into action across industry verticals.
+                                </div>
+                                <div class="timeline-footer">
+                                    Event Duration:<span class="time"> 2-3 Hrs. <i class="fas fa-clock"> </i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.timeline -->
+
+                    <div class="timeline">
+                        <!-- timeline time label -->
+                        <div class="time-label">
+                            <span class="bg-green">{{ \Carbon\Carbon::now()->format('M. d, Y')}}</span>
+                        </div>
+                        <!-- /.timeline-label -->
+                        <!-- timeline item -->
+                        <div>
+                            <i class="fas bg-blue"></i>
+                            <div class="timeline-item">
+
+                                <h3 class="timeline-header"><a href="#">IOT CONFERENCE: THE INTERSECTION OF INDUSTRIES AND IOT TECHNOLOGIES</a> <span>|</span> Cebu City</h3>
+
+                                <div class="timeline-body">
+                                    The global conference and exhibition where strategists,
+                                    technologists and implementers connect, putting IoT, AI, 5G,
+                                    Edge and Security into action across industry verticals.
+                                </div>
+                                <div class="timeline-footer">
+                                    Event Duration:<span class="time"> 2-3 Hrs. <i class="fas fa-clock"> </i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.timeline -->
+
                     <div>
                         <i class="fas fa-clock bg-gray"></i>
                     </div>

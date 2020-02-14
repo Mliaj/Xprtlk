@@ -23,6 +23,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <div class="container-fluid">
+          @include('inc.alert')
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1>

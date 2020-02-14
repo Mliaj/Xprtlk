@@ -101,11 +101,11 @@
     <label for="">Event Ticket Registration</label>
 
     <div class="form-check">
-        <input type="radio" name="eventRegistration" value="yes" class="form-check-input">
+        <input type="radio" name="eventRegistration" value="1" class="form-check-input">
         <label for="" class="form-check-label">Yes</label>
     </div>
     <div class="form-check">
-        <input type="radio" name="eventRegistration" value="partially" class="form-check-input">
+        <input type="radio" name="eventRegistration" value="0" class="form-check-input">
         <label for="" class="form-check-label">No</label>
     </div>
 </div>

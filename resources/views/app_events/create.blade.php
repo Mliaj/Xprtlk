@@ -19,7 +19,7 @@
         <div class="card card-body">
             <div class="form-group">
                 <label for="">Title of your event</label>
-                <input type="text" class="form-control" name="titleEvent">
+                <input type="text" class="form-control" name="titleEvent" required style="font-size:30px; height: 80px">
             </div>
             <div class="form-group">
                 <label for="">Event Logo</label>
@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <label for="">Location</label>
-                <input type="text" class="form-control" name="location">
+                <textarea name="location" class="form-control" cols="30" rows="3" style="resize:none"></textarea>
             </div>
 
             <hr>

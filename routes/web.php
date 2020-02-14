@@ -20,21 +20,23 @@ Route::get('register/{email?}', 'Auth\RegisterController@index')->name('register
 Route::post('register', 'Auth\RegisterController@create')->name('register');
 
 Route::get("expert/profile", 'UserController@show')->name('expert_profile');
+Route::get("event_organizer/profile", 'UserController@show')->name('event_org_profile');
 
-Route::get("expert/profile/edit", 'UserController@edit')->name('exp_profile_edit');
+Route::get('expert/event_list', 'AppEventController@showEventList')->name('event_list');
+Route::get('expert/event_list/{id}', 'AppEventController@showEventPost')->name('event_post');
 
-Route::get('/expert/event_list', 'AppEventController@showEventList')->name('event_list');
-Route::get('/expert/event_history', 'AppEventController@showEventHistory')->name('event_history');
+Route::get('event_organizer/create_event', 'AppEventController@createEventPost')->name('event_create');
+Route::post('event_organizer/create_event', 'AppEventController@storeEventPost')->name('event_store');
 // Route::group(['middleware' => 'auth'], function() {
 
 // });
 
-Route::get('event_org/home', function() {
-    return view('dashboard.dash_event_org');
+Route::get('event_organizer/home', function() {
+    return view('dashboard.event_org');
 })->name('event_org_home');
 
 Route::get('expert/home', function() {
-    return view('dashboard.dash_expert');
+    return view('dashboard.expert');
 })->name('expert_home');
 
 Route::get('/', function() {

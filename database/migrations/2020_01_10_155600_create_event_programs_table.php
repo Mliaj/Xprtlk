@@ -15,15 +15,23 @@ class CreateEventProgramsTable extends Migration
     {
         Schema::create('event_programs', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->unsignedInteger('event_organizer_profile_id')->unique()->nullable();
+            $table->unsignedInteger('event_organizer_profile_id')->unique();
             $table->string('title', 50);
+            $table->string('logo_location', 255);
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('location', 255);
+            $table->date('start_apply_date');
+            $table->date('end_apply_date');
+            $table->string('expert_fees'); //Stored as array string
             $table->string('description', 300);
-            $table->string('venue', 150);
-            $table->tinyInteger('no_of_experts');
-            $table->dateTime('schedule_in');
-            $table->dateTime('schedule_out');
-            $table->tinyInteger('status');
-            $table->tinyInteger('timer');
+            $table->string('audience_size', 25);
+            $table->string('topics'); // Stored as array string
+            $table->string('expert_roles'); // Stored as array string
+            $table->string('presentation_type'); // Stored as array string
+            $table->enum('travel_fee', ['yes', 'partially', 'no']);
+            $table->enum('accomodation_fee', ['yes', 'partially', 'no']);
+            $table->tinyInteger('with_ticket');
             $table->timestamps();
             $table->softDeletes();
         });

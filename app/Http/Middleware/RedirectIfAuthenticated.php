@@ -19,10 +19,10 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             if (Auth::user()->user_type == 'Expert')
-                return redirect()->route('expertHome');
+                return redirect()->route('expert_home');
             
             if (Auth::user()->user_type == 'Event Organizer')
-                return redirect()->route('eventOrgHome');
+                return redirect()->route('event_org_home');
         }
 
         return $next($request);

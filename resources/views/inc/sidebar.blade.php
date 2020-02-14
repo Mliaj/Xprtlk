@@ -1,7 +1,11 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="@if (Auth::user()->isExpert())
+                {{ route('expert_home') }}
+             @else
+                {{ route('event_org_home') }}
+             @endif" class="brand-link">
       <img src=""
            alt=""
            class="brand-image img-circle elevation-3"
@@ -62,13 +66,14 @@
               </p>
             </a>
 
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-star-half-alt"></i>
               <p>
                 Ratings & Feedbacks
               </p>
             </a>
+          </li> --}}
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

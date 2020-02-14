@@ -1,4 +1,4 @@
-@extends('dashboard.dash_account')
+@extends('dashboard.account')
 
 @section('content-title')
     Event List
@@ -16,7 +16,7 @@
 
                   <div class="row">
                     <div class="col-sm-4 mb-2">
-                    <a href="{{ route('event_post',1) }}">
+                    <a href="{{ route('event_post', 1) }}">
                       <div class="position-relative p-3 bg-gray" style="height: 180px">
                         <div class="ribbon-wrapper">
                           <div class="ribbon bg-primary">

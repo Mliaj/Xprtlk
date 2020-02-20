@@ -25,7 +25,9 @@ class StoreEventRequest extends FormRequest
     public function rules()
     {
         return [
-            'logoEvent' => 'mimes:jpeg,png|max:50000'
+            'logoEvent'     => 'mimes:jpeg,png|max:50000',
+            'description'   => 'nullable|string|max:300',
+            'expertFees'    => 'required',
         ];
     }
 }

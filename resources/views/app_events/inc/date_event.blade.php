@@ -9,7 +9,7 @@
             <label for="">Day</label>
             <select name="startDay" class="form-control">
                 @foreach (range(1, 31) as $day)
-                    <option value="{{ $day }}">{{ $day }}</option>
+                    <option value="{{ str_pad($day, 2, 0, STR_PAD_LEFT) }}">{{ $day }}</option>
                 @endforeach
             </select>
         </div>
@@ -17,7 +17,7 @@
             <label for="">Month</label>
             <select name="startMonth" class="form-control">
                 @foreach (range(1, 12) as $month)
-                    <option value="{{ $month }}">{{ date('F', mktime(0, 0, 0, $month, 1)) }}</option>
+                    <option value="{{ str_pad($month, 2, 0, STR_PAD_LEFT) }}">{{ date('F', mktime(0, 0, 0, $month, 1)) }}</option>
                 @endforeach
             </select>
         </div>
@@ -41,7 +41,7 @@
             <label for="">Day</label>
             <select name="endDay" class="form-control">
                 @foreach (range(1, 31) as $day)
-                    <option value="{{ $day }}">{{ $day }}</option>
+                    <option value="{{ str_pad($day, 2, 0, STR_PAD_LEFT) }}">{{ $day }}</option>
                 @endforeach
             </select>
         </div>
@@ -49,7 +49,7 @@
             <label for="">Month</label>
             <select name="endMonth" class="form-control">
                 @foreach (range(1, 12) as $month)
-                    <option value="{{ $month }}">{{ date('F', mktime(0, 0, 0, $month, 1)) }}</option>
+                    <option value="{{ str_pad($month, 2, 0, STR_PAD_LEFT) }}">{{ date('F', mktime(0, 0, 0, $month, 1)) }}</option>
                 @endforeach
             </select>
         </div>

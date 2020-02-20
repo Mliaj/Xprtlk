@@ -14,23 +14,25 @@ class CreateEventProgramsTable extends Migration
     public function up()
     {
         Schema::create('event_programs', function (Blueprint $table) {
+            $feeChoice = ['yes', 'partially', 'no'];
+
             $table->increments('id')->unsigned();
-            $table->unsignedInteger('event_organizer_profile_id')->unique();
+            $table->unsignedInteger('event_organizer_profile_id');
             $table->string('title', 50);
-            $table->string('logo_location', 255);
+            $table->string('logo_location')->nullable();
             $table->date('start_date');
             $table->date('end_date');
             $table->string('location', 255);
-            $table->date('start_apply_date');
-            $table->date('end_apply_date');
+            $table->dateTime('start_apply_date');
+            $table->dateTime('end_apply_date');
             $table->string('expert_fees'); //Stored as array string
             $table->string('description', 300);
             $table->string('audience_size', 25);
             $table->string('topics'); // Stored as array string
             $table->string('expert_roles'); // Stored as array string
-            $table->string('presentation_type'); // Stored as array string
-            $table->enum('travel_fee', ['yes', 'partially', 'no']);
-            $table->enum('accomodation_fee', ['yes', 'partially', 'no']);
+            $table->string('presentation_types'); // Stored as array string
+            $table->enum('travel_fee', $feeChoice);
+            $table->enum('accomodation_fee', $feeChoice);
             $table->tinyInteger('with_ticket');
             $table->timestamps();
             $table->softDeletes();
@@ -41,7 +43,7 @@ class CreateEventProgramsTable extends Migration
                   ->references('id')
                   ->on('event_organizer_profiles')
                   ->onUpdate('CASCADE')
-                  ->onDelete('SET NULL');
+                  ->onDelete('CASCADE');
         });
     }
 

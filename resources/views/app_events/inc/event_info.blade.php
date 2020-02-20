@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="">Event Description</label>
-    <textarea name="" cols="30" rows="4" class="form-control"></textarea>
+    <textarea name="description" cols="30" rows="4" class="form-control"></textarea>
 </div>
 
 <div class="form-group">
@@ -24,7 +24,7 @@
 <div class="form-group">
     <label for="">Topics related to the event</label>
 
-    <select name="topics" class="form-control" multiple>
+    <select name="topics[]" class="form-control" multiple>
         {{-- <option value="None">None</option> --}}
         <option value="Technology">Technology</option>
         <option value="PR & Communications">PR & Communications</option>
@@ -43,7 +43,7 @@
 <div class="form-group">
     <label for="">Expert Roles needed</label>
 
-    <select name="expertRole" class="form-control" multiple>
+    <select name="expertRoles[]" class="form-control" multiple>
         @foreach ($expertRoles as $role)
             <option value="{{ $role->id }}">{{ $role->role }}</option>
         @endforeach
@@ -53,7 +53,7 @@
 <div class="form-group">
     <label for="">Presentation Type</label>
 
-    <select name="expertPresentation" class="form-control" multiple>
+    <select name="expertPresentations[]" class="form-control" multiple>
         <option value="conference">Conference</option>
         <option value="workshop">Workshop</option>
         <option value="moderator">Moderator</option>

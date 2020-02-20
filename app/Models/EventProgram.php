@@ -7,8 +7,44 @@ use Illuminate\Support\Facades\Auth;
 
 class EventProgram extends Model
 {
-    public static function getUserLastEvent()
+    protected $fillable = [
+        'event_organizer_profile_id',
+        'title',
+        'logo_location',
+        'start_date',
+        'end_date',
+        'location',
+        'start_apply_date',
+        'end_apply_date',
+        'expert_fees',
+        'description',
+        'audience_size',
+        'topics',
+        'expert_roles',
+        'presentation_types',
+        'travel_fee',
+        'accomodation_fee',
+        'with_ticket',
+    ];
+
+    // Mutators
+    public function setExpertFeesAttribute($value)
     {
-        return EventProgram::where(Auth::id())->get()->last() ?? 1;
+        $this->attributes['expert_fees'] = implode(", ", $value);
+    }
+
+    public function setTopicsAttribute($value)
+    {
+        $this->attributes['topics'] = implode(", ", $value);
+    }
+
+    public function setExpertRolesAttribute($value)
+    {
+        $this->attributes['expert_roles'] = implode(", ", $value);
+    }
+
+    public function setPresentationTypesAttribute($value)
+    {
+        $this->attributes['presentation_types'] = implode(", ", $value);
     }
 }

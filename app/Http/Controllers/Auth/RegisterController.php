@@ -46,8 +46,20 @@ class RegisterController extends Controller
 
     public function create(RegisterRequest $request)
     {   
-        User::create($request->input());
-        
+        $user     = User::create($request->input());
+        $user->personalInfo()->create();
+
+        $userType = '';
+        if ($user->user_type === 'Expert') {
+            $userType = '\App\Models\ExpertProfile';
+        } else {
+            $userType = '\App\Models\EventOrganizerProfile';
+        }
+
+        $userType::create([
+            'personal_info_id' => $user->personalInfo->id
+        ]);
+
         return redirect()
                 ->route('login')
                 ->withSuccess('Successfully account created');

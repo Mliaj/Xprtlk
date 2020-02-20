@@ -15,7 +15,6 @@ class CreateEventOrganizerProfilesTable extends Migration
     {
         Schema::create('event_organizer_profiles', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->unsignedInteger('user_id')->unique();
             $table->unsignedInteger('personal_info_id')->unique();
             $table->timestamps();
             $table->softDeletes();
@@ -23,11 +22,6 @@ class CreateEventOrganizerProfilesTable extends Migration
             $table->foreign('personal_info_id')
                   ->references('id')
                   ->on('personal_infos')
-                  ->onUpdate('CASCADE')
-                  ->onDelete('CASCADE');
-            $table->foreign('user_id')
-                  ->references('id')
-                  ->on('users')
                   ->onUpdate('CASCADE')
                   ->onDelete('CASCADE');
         });

@@ -15,10 +15,9 @@ class CreateExpertProfilesTable extends Migration
     {
         Schema::create('expert_profiles', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('bio', 700);
-            $table->string('field', 50);
-            $table->string('expertise', 50);
-            $table->unsignedInteger('user_id')->unique();
+            $table->string('bio', 700)->nullable();
+            $table->string('field')->nullable();
+            $table->string('expertise')->nullable();
             $table->unsignedInteger('personal_info_id')->unique();
             $table->timestamps();
             $table->softDeletes();
@@ -26,11 +25,6 @@ class CreateExpertProfilesTable extends Migration
             $table->foreign('personal_info_id')
                   ->references('id')
                   ->on('personal_infos')
-                  ->onUpdate('CASCADE')
-                  ->onDelete('CASCADE');
-            $table->foreign('user_id')
-                  ->references('id')
-                  ->on('users')
                   ->onUpdate('CASCADE')
                   ->onDelete('CASCADE');
         });

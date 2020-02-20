@@ -39,6 +39,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getUserHomeRoute()
+    {
+        if (Auth::user()->user_type === 'Expert') {
+            return 'expert_home';
+        }
+
+        return 'event_org_home';
+    }
+
+    // Mutators
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
@@ -47,5 +57,11 @@ class User extends Authenticatable
     public function isExpert()
     {
         return $this->user_type == 'Expert';
+    }
+
+    //Relationship
+    public function personalInfo()
+    {
+        return $this->hasOne('App\Models\PersonalInfo');
     }
 }

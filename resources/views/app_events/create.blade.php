@@ -11,7 +11,7 @@
 
 @section('content')
 <div class="container-fluid">
-    {!! Form::open(['route' => 'event_store' ,'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['route' => 'event_store' , 'files' => true]) !!}
         <div class="text-right mb-2">
             <button class="btn btn-primary">Publish</button>
         </div>
@@ -48,7 +48,10 @@
                 <label for="">Expert's Fee</label>
                 @foreach ($expertFees as $fee)
                     <div class="form-check">
-                        <input type="checkbox" name="fee[]" class="form-check-input" value="{{ $fee->id }}">
+                        <input type="checkbox" name="expertFees[]" class="form-check-input" value="{{ $fee->id }}"
+                        @if ($fee->id === 1)
+                            checked
+                        @endif>
                         <label for="" class="form-check-label">{{ $fee->description }}</label>
                     </div>
                 @endforeach

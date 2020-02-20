@@ -15,65 +15,26 @@
         <div class="text-right mb-2">
           <a href="{{ route('event_create') }}" class="btn btn-primary">Add Event</a>
         </div>
-
+                
         <div class="row">
-          <div class="col-12">
-              
-                <div class="row">
-                  <div class="col-sm-4 mb-2">
-                  <a href="{{ route('event_post', 1) }}">
-                    <div class="position-relative p-3 bg-gray" style="height: 180px">
-                      <div class="ribbon-wrapper">
-                        <div class="ribbon bg-primary">
-                          Ribbon
-                        </div>
-                      </div>
-                      Ribbon Default <br />
-                      <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-                    </div>
-                  </a>
-                  </div>
-                  <div class="col-sm-4 mb-2">
-                      <div class="position-relative p-3 bg-gray" style="height: 180px">
-                        <div class="ribbon-wrapper">
-                          <div class="ribbon bg-primary">
-                            Cancelled
-                          </div>
-                        </div>
-                        Ribbon Default <br />
-                        <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="position-relative p-3 bg-gray" style="height: 180px">
-                        <div class="ribbon-wrapper">
-                          <div class="ribbon bg-primary">
-                            Ribbon
-                          </div>
-                        </div>
-                        Ribbon Default <br />
-                        <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                      <div class="col-sm-4">
-                          <div class="position-relative p-3 bg-gray" style="height: 180px">
-                            <div class="ribbon-wrapper">
-                              <div class="ribbon bg-primary">
-                                Ribbon
-                              </div>
-                            </div>
-                            Ribbon Default <br />
-                            <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-                          </div>
-                      </div>
-                  </div>
-           
+        @foreach ($eventPrograms as $event)
+          <div class="col-sm-4 mb-2">
+          <a href="{{ route('event_post', $event->id) }}">
+            <div class="position-relative p-3 bg-gray fit-image" 
+                  style="background-image: url({{ asset($event->logo_location) }});">
+              <div class="ribbon-wrapper">
+                <div class="ribbon bg-primary">
+                  Ribbon
+                </div>
+              </div>
+              {{ $event->title }} <br />
+              <small>{{ $event->description }}</small>
+            </div>
+          </a>
           </div>
-          <!-- /.col -->
+        @endforeach
         </div>
-        <!-- /.row -->
+           
       </div>
       <!-- /.container-fluid -->
     </div>

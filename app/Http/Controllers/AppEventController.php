@@ -18,11 +18,11 @@ class AppEventController extends Controller
     }
 
     /**
-     * @param int $id
+     * @param \App\Models\EventProgram $event
      */
-    public function showEventPost($id)
+    public function showEventPost(EventProgram $event)
     {
-        return view('app_events.show');
+        return view('app_events.show', compact('event'));
     }
 
     public function createEventPost()

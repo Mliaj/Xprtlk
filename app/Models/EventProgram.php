@@ -27,6 +27,10 @@ class EventProgram extends Model
         'with_ticket',
     ];
 
+    // protected $casts = [
+    //     'with_ticket' => bool
+    // ];
+
     // Mutators
     public function setExpertFeesAttribute($value)
     {
@@ -46,5 +50,11 @@ class EventProgram extends Model
     public function setPresentationTypesAttribute($value)
     {
         $this->attributes['presentation_types'] = implode(", ", $value);
+    }
+
+    // Accessors
+    public function getLogoLocationAttribute($value)
+    {
+        return 'storage/' . $value;
     }
 }

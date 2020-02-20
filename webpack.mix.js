@@ -17,7 +17,8 @@ mix.js('resources/js/app.js', 'public/js')
 mix.styles([
     'public/adminlte/dist/css/adminlte.min.css',
     'public/adminlte/plugins/fontawesome-free/css/all.min.css',
-    'public/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css'
+    'public/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css',
+    'resources/css/event_program.css'
 ], 'public/css/all.css');
 
 mix.scripts([

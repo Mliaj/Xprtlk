@@ -1,4 +1,4 @@
-@extends('dashboard/account')
+@extends('dashboard.account')
 
 @section('content-title')
     Profile

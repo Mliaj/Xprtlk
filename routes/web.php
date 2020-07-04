@@ -25,8 +25,11 @@ Route::get("event_organizer/profile", 'UserController@show')->name('event_org_pr
 Route::get('event_list', 'AppEventController@showEventList')->name('event_list');
 Route::get('event_list/{event}', 'AppEventController@showEventPost')->name('event_post');
 
-Route::get('event_organizer/create_event', 'AppEventController@createEventPost')->name('event_create');
-Route::post('event_organizer/create_event', 'AppEventController@storeEventPost')->name('event_store');
+Route::get('create_event', 'AppEventController@create')->name('event_create');
+Route::post('create_event', 'AppEventController@store')->name('event_store');
+Route::get('edit_event/{event}', 'AppEventController@edit')->name('event_edit');
+Route::put('edit_event/{event}', 'AppEventController@update')->name('event_update');
+Route::delete('edit_event/{event}', 'AppEventController@destroy')->name('event_destroy');
 // Route::group(['middleware' => 'auth'], function() {
 
 // });

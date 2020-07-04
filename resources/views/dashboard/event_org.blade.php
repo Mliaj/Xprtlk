@@ -31,6 +31,8 @@
               <small>{{ $event->description }}</small>
             </div>
           </a>
+
+          <a href="" class="btn btn-block btn-primary">Add Experts</a>
           </div>
         @endforeach
         </div>

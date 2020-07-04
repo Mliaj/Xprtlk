@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEventRequest;
+use App\Http\Requests\UpdateEventRequest;
 use App\Models\EventProgram;
 use App\Models\ExpertFee;
 use App\Models\ExpertRole;
@@ -25,7 +26,7 @@ class AppEventController extends Controller
         return view('app_events.show', compact('event'));
     }
 
-    public function createEventPost()
+    public function create()
     {
         $expertFees  = ExpertFee::all();
         $expertRoles = ExpertRole::all();
@@ -33,7 +34,7 @@ class AppEventController extends Controller
         return view('app_events.create', compact('expertFees', 'expertRoles'));
     }
 
-    public function storeEventPost(StoreEventRequest $request)
+    public function store(StoreEventRequest $request)
     {
         $imgLocation = '';
         $start_date  = $this->validateDate($request->input('startDay')    . '-' . 
@@ -59,7 +60,7 @@ class AppEventController extends Controller
         $data = [
             'event_organizer_profile_id' => Auth::id(),
             'title'                      => $request->input('titleEvent'),
-            'logo_location'              => $imgLocation,
+            'logo_location'              => 'storage/' . $imgLocation,
             'start_date'                 => $start_date,
             'end_date'                   => $end_date,
             'location'                   => $request->input('location'),
@@ -81,6 +82,29 @@ class AppEventController extends Controller
         return redirect()
                 ->route(Auth::user()->getUserHomeRoute())
                 ->withSuccess('Event has been published');
+    }
+
+    public function edit(EventProgram $event)
+    {
+        $expertFees  = ExpertFee::all();
+        $expertRoles = ExpertRole::all();
+
+        return view('app_events.edit', compact('expertFees', 'expertRoles', 'event'));
+    }
+
+    public function update(UpdateEventRequest $request, EventProgram $event)
+    {
+        dd($request->input(), $event);
+    }
+
+    public function destroy(EventProgram $event)
+    {
+        $event->delete();
+        $event->deleteImage();
+
+        return redirect()
+               ->route('event_org_home')
+               ->withDanger('Post has been deleted'); 
     }
 
     private function validateDate(string $date)

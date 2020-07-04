@@ -14,7 +14,7 @@ class CreateEventProgramsTable extends Migration
     public function up()
     {
         Schema::create('event_programs', function (Blueprint $table) {
-            $feeChoice = ['yes', 'partially', 'no'];
+            $feeChoice = ['Yes', 'Partially', 'No'];
 
             $table->increments('id')->unsigned();
             $table->unsignedInteger('event_organizer_profile_id');
@@ -25,12 +25,12 @@ class CreateEventProgramsTable extends Migration
             $table->string('location', 255);
             $table->dateTime('start_apply_date');
             $table->dateTime('end_apply_date');
-            $table->string('expert_fees'); //Stored as array string
+            $table->string('expert_fees'); // Stored as array of strings
             $table->string('description', 300);
             $table->string('audience_size', 25);
-            $table->string('topics'); // Stored as array string
-            $table->string('expert_roles'); // Stored as array string
-            $table->string('presentation_types'); // Stored as array string
+            $table->string('topics'); // Stored as array of strings
+            $table->string('expert_roles'); // Stored as array of strings
+            $table->string('presentation_types'); // Stored as array of strings
             $table->enum('travel_fee', $feeChoice);
             $table->enum('accomodation_fee', $feeChoice);
             $table->tinyInteger('with_ticket');

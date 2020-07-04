@@ -17,4 +17,15 @@ class PersonalInfo extends Model
         'company',
         'user_id',
     ];
+
+    // Relationship
+    public function expertProfile()
+    {
+        return $this->hasOne('App\Models\ExpertProfile');
+    }
+
+    public function eventOrgProfile()
+    {
+        return $this->hasOne('App\Models\EventOrganizerProfile');
+    }
 }

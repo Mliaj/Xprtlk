@@ -1,5 +1,14 @@
 .fit-image {
     height: 180px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
+}
+
+img.fixed-size-logo {
+    height: 300px;
+    width: 350px;
+}
+
+.unclickable {
+    pointer-events: none;
 }

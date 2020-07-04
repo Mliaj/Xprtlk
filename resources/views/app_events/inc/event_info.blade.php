@@ -112,18 +112,24 @@
     <label for="">Travel Covered?</label>
 
     <div class="form-check">
-        <input type="radio" name="travelFee" value="yes" class="form-check-input" 
-            {{ $event->travel_fee == "yes" ? "checked" : "" }}>
+        <input type="radio" name="travelFee" value="yes" class="form-check-input"
+            @if (isset($event))
+                {{ $event->travel_fee == "yes" ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">Yes</label>
     </div>
     <div class="form-check">
-        <input type="radio" name="travelFee" value="partially" class="form-check-input" 
-            {{ $event->travel_fee == "partially" ? "checked" : "" }}>
+        <input type="radio" name="travelFee" value="partially" class="form-check-input"
+            @if (isset($event))
+                {{ $event->travel_fee == "partially" ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">Partially</label>
     </div>
     <div class="form-check">
         <input type="radio" name="travelFee" value="no" class="form-check-input"
-            {{ $event->travel_fee == "no" ? "checked" : "" }}>
+            @if (isset($event))
+                {{ $event->travel_fee == "no" ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">No</label>
     </div>
 </div>
@@ -133,17 +139,23 @@
 
     <div class="form-check">
         <input type="radio" name="accomodationFee" value="yes" class="form-check-input"
-            {{ $event->accomodation_fee == "yes" ? "checked" : "" }}>
+            @if (isset($event))
+                {{ $event->accomodation_fee == "yes" ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">Yes</label>
     </div>
     <div class="form-check">
         <input type="radio" name="accomodationFee" value="partially" class="form-check-input"
-            {{ $event->accomodation_fee == "partially" ? "checked" : "" }}>
+            @if (isset($event))
+                {{ $event->accomodation_fee == "partially" ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">Partially</label>
     </div>
     <div class="form-check">
         <input type="radio" name="accomodationFee" value="no" class="form-check-input"
-            {{ $event->accomodation_fee == "no" ? "checked" : "" }}>
+            @if (isset($event))
+                {{ $event->accomodation_fee == "no" ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">No</label>
     </div>
 </div>
@@ -153,12 +165,16 @@
 
     <div class="form-check">
         <input type="radio" name="eventRegistration" value="1" class="form-check-input"
-            {{ $event->with_ticket == true ? "checked" : "" }}>
+            @if (isset($event))
+                {{ $event->with_ticket == true ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">Yes</label>
     </div>
     <div class="form-check">
         <input type="radio" name="eventRegistration" value="0" class="form-check-input"
-            {{ $event->with_ticket == false ? "checked" : "" }}>
+            @if (isset($event))
+                {{ $event->with_ticket == false ? "checked" : "" }}
+            @endif>
         <label for="" class="form-check-label">No</label>
     </div>
 </div>

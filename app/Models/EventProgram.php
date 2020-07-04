@@ -93,7 +93,7 @@ class EventProgram extends Model
 
     public function getApplyDate()
     {
-        return $this->start_apply_date->format('M d, Y') . ' - ' . $this->end_apply_date->format('M d, Y');
+        return $this->start_apply_date->format('M d, Y h:i A') . ' - ' . $this->end_apply_date->format('M d, Y h:i A');
     }
 
     public function getTopics()

@@ -94,7 +94,54 @@ class AppEventController extends Controller
 
     public function update(UpdateEventRequest $request, EventProgram $event)
     {
-        dd($request->input(), $event);
+        $imgLocation = '';
+        $start_date  = $this->validateDate($request->input('startDay')    . '-' . 
+                                            $request->input('startMonth') . '-' .
+                                            $request->input('startYear'));
+        $end_date    = $this->validateDate($request->input('endDay')    . '-' .
+                                            $request->input('endMonth') . '-' .
+                                            $request->input('endYear'));
+
+        $start_apply_date    = $this->validateDate($request->input('startApplyDay')  . '-' .
+                                            $request->input('startApplyMonth')       . '-' .
+                                            $request->input('startApplyYear')        . ' ' .
+                                            $request->input('startApplyHour')        . ':00:00');
+        $end_apply_date      = $this->validateDate($request->input('endApplyDay')  . '-' .
+                                            $request->input('endApplyMonth')       . '-' .
+                                            $request->input('endApplyYear')        . ' ' .
+                                            $request->input('endApplyHour')        . ':00:00');
+
+        if ($request->hasFile('logoEvent')) {
+            $imgLocation = $request->file('logoEvent')->store('event_logos', 'public');
+
+            $event->deleteImage();
+            $event->logo_location              = 'storage/' . $imgLocation;
+        } else {
+            $event->logo_location              = $event->logo_location;
+        }
+
+            $event->event_organizer_profile_id = Auth::id();
+            $event->title                      = $request->input('titleEvent');
+            $event->start_date                 = $start_date;
+            $event->end_date                   = $end_date;
+            $event->location                   = $request->input('location');
+            $event->start_apply_date           = $start_apply_date;
+            $event->end_apply_date             = $end_apply_date;
+            $event->expert_fees                = $request->input('expertFees');
+            $event->description                = $request->input('description');
+            $event->audience_size              = $request->input('audienceSize');
+            $event->topics                     = $request->input('topics');
+            $event->expert_roles               = $request->input('expertRoles');
+            $event->presentation_types         = $request->input('expertPresentations');
+            $event->travel_fee                 = $request->input('travelFee');
+            $event->accomodation_fee           = $request->input('accomodationFee');
+            $event->with_ticket                = $request->input('eventRegistration');
+
+            $event->save();
+            
+        return redirect()
+                ->route(Auth::user()->getUserHomeRoute())
+                ->withSuccess('Event has been updated');
     }
 
     public function destroy(EventProgram $event)

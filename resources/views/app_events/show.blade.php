@@ -27,6 +27,10 @@
                         <img class="fixed-size-logo" src="{{ asset($event->logo_location) }}" alt="event logo">
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-header">List of Experts</div>
+                </div>
             </div>
 
             <div class="col">
@@ -84,11 +88,11 @@
                             <small class="text-muted">Presentation Type</small>
                         </div>
                         <div class="form-group">
-                            <input type="text" readonly class="form-control-plaintext unclickable" value="{{ $event->travel_fee }}">
+                            <input type="text" readonly class="form-control-plaintext unclickable" value="{{ ucfirst($event->travel_fee) }}">
                             <small class="text-muted">Travel Fee</small>
                         </div>
                         <div class="form-group">
-                            <input type="text" readonly class="form-control-plaintext unclickable" value="{{ $event->accomodation_fee }}">
+                            <input type="text" readonly class="form-control-plaintext unclickable" value="{{ ucfirst($event->accomodation_fee) }}">
                             <small class="text-muted">Accomodation Fee</small>
                         </div>
                         <div class="form-group">
